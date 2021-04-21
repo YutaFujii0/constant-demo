@@ -1,24 +1,23 @@
-# README
+# Reproduce Procedure
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. run `rails s` command and start server
+2. In your browser, request http://localhost:3000/  You'll probably see dogs and cats list.
+3. In DogsController, comment this out and save
 
-Things you may want to cover:
+```
+dogs.push({ name: 'Hachi' })
+```
 
-* Ruby version
+4. In CatsController, comment this out and save
 
-* System dependencies
+```
+cats.push({ name: 'Pudding' })
+```
 
-* Configuration
+5. Reload the page, and you will **sometimes** see either dogs/cats is not listed, when the error is occurred.
+6. If you don't see the bug, comment those lines in and reload. And retry these process.
 
-* Database creation
+## Bugs
 
-* Database initialization
+### Unable to autoload constant Api::One::Two::CatsController, expected /constant-demo/app/controllers/api/one/two/cats_controller.rb to define it
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
