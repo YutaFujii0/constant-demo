@@ -1,21 +1,12 @@
-import axios from 'axios';
-import Vue from 'vue/dist/vue.esm.js';
+import Vue from 'vue'
 
 document.addEventListener('DOMContentLoaded', () => {
-  Vue.component('v-cats', {
-    data: function () {
-      return {
-        cats: []
+  if (document.getElementById('data-cats')) {
+    new Vue({
+      el: '#data-cats',
+      mounted: function() {
+        fetch('/api/one/two/cats')
       }
-    },
-    template: '<div>Cats:<ul><li v-for="cat in cats">{{ cat.name }}</li></ul></div>',
-    created: function() {
-      axios.get('/api/one/two/cats')
-           .then((res) => {
-             this.cats = res.data.cats
-           })
-    }
-  })
-
-  new Vue({ el: '#data-cats' })
+    })
+  }
 })
