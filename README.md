@@ -5,13 +5,13 @@
 3. In DogsController, comment this out and save
 
 ```
-dogs.push({ name: 'Hachi' })
+'Do some work and change files'
 ```
 
 4. In CatsController, comment this out and save
 
 ```
-cats.push({ name: 'Pudding' })
+'Do some work and change files'
 ```
 
 5. Reload the page, and you will **sometimes** see either dogs/cats is not listed, when the error is occurred.
@@ -19,5 +19,11 @@ cats.push({ name: 'Pudding' })
 
 ## Bugs
 
+Below two bugs occur.
+
+### A copy of Api::One has been removed from the module tree but is still active!
+
+![Screenshot](screenshot1.png)
 ### Unable to autoload constant Api::One::Two::CatsController, expected /constant-demo/app/controllers/api/one/two/cats_controller.rb to define it
 
+![Screenshot](screenshot2.png)
